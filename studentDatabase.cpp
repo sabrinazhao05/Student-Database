@@ -20,7 +20,7 @@ public:
         student newStudent;
         cout << "Enter name: ";
         getline (cin, newStudent.name);
-        cout << "Enter roll number: ";
+        cout << "Enter student ID: ";
         cin >> newStudent.rollNum;
         cout << "Enter mark(s): ";
         cin >> newStudent.mark;
@@ -48,9 +48,9 @@ void deleteStudent(int rollNum) {
         {return s.rollNum == rollNum;}); 
     if (it != students.end()) {
         students.erase(it);
-        cout << "Student with roll number " << rollNum << " deleted successfully\n";
+        cout << "Student with student ID " << rollNum << " deleted successfully\n";
     } else {
-        cout << "Student with roll number " << rollNum << " cannot be found\n";
+        cout << "Student with student ID " << rollNum << " cannot be found\n";
     }
 }
 
@@ -63,9 +63,9 @@ void updateStudent(int rollNum) {
         getline (cin, it->name);
         cout << "Enter new marks: ";
         cin >> it->mark;
-        cout << "Student with roll number " << rollNum << " updated successfully\n";
+        cout << "Student with student ID " << rollNum << " updated successfully\n";
     } else {
-        cout << "Student with roll number " << rollNum << " cannot be found\n";
+        cout << "Student with student ID " << rollNum << " cannot be found\n";
     }
 }
 };
@@ -95,13 +95,13 @@ int main() {
             break;
 
          case 3:
-            cout << "Enter roll number to delete: ";
+            cout << "Enter student ID to delete: ";
             cin >> rollNum;
             database.deleteStudent(rollNum);
             break;
 
         case 4:
-            cout << "Enter roll number to update: ";
+            cout << "Enter studnet ID to update: ";
             cin >> rollNum;
             cin.ignore();
             database.updateStudent(rollNum);
