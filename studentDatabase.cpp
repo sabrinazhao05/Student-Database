@@ -55,7 +55,7 @@ void deleteStudent(int rollNum) {
 }
 
 void updateStudent(int rollNum) {
-    auto it = find_if(students.begin(), students.end(),
+    auto it = find_if(students.begin(),students.end(),
         [rollNum](const student &s)
         {return s.rollNum == rollNum;});
     if (it != students.end()) {
